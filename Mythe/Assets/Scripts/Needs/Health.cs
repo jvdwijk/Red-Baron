@@ -18,11 +18,12 @@ public class Health : MonoBehaviour {
 	void OnTriggerEnter(Collider other){
 		if (other.CompareTag ("Bullet")) {
 			_health--;
-			Destroy (other.gameObject);
+			//Destroy (other.gameObject);
 		}
 	}
 	void Update () {
 		if (_health <= 0) {
+		    
 			Animate ();
 		}
 		if (CompareTag ("Player")) {
