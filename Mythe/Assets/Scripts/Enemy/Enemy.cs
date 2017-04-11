@@ -11,7 +11,6 @@ public enum StateId
 
 public class Enemy : MonoBehaviour
 {
-
     private StateMachine _stateMachine;
 
 	private void Start ()
