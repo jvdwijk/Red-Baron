@@ -17,7 +17,7 @@ public class Attack : State
         if (_waitTime <= Time.realtimeSinceStartup)
         {
             //Turret.Shoot(_target);
-            _waitTime = (int)Time.realtimeSinceStartup;
+            _waitTime = (int)Time.realtimeSinceStartup + _delay;
         }
     }
 
