@@ -14,7 +14,6 @@ public class Health : MonoBehaviour {
 		_counter = 0;
 	}
 
-
 	void OnTriggerEnter(Collider other){
 		if (other.CompareTag ("Bullet")) {
 			_health--;
@@ -34,10 +33,6 @@ public class Health : MonoBehaviour {
 			}
 			}
 		}
-
-
-
-		
 	void Animate(){
 		//play death animation
 	}
