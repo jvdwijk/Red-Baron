@@ -24,11 +24,10 @@ public class Wandering : State
         {
             GetComponent<StateMachine>().SetState( StateId.AttackState );
         }
-    }
-
-    public override void LeaveState()
-    {
-
+        if (Vector3.Distance(transform.position, _destination) <= 2)
+        {
+            ChangeDestination();
+        }
     }
 
     public override void EnterState()
