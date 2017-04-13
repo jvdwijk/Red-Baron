@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VR.WSA.WebCam;
 
 
 public class Attack : State
@@ -10,13 +11,21 @@ public class Attack : State
     [SerializeField] private GameObject _muzzle;
     [SerializeField] private int _delay;
     [SerializeField] private int _waitTime;
+    private Turret _turret;
+    private EnemyMovement _enemyMovement;
+
+    private void Awake()
+    {
+        _turret = GetComponent<Turret>();
+        _enemyMovement = GetComponent<EnemyMovement>();
+    }
 
     public override void Action()
     {
-        //EnemyMovement.Move(_target);
+        _enemyMovement.Move(_target);
         if (_waitTime <= Time.realtimeSinceStartup)
         {
-            //Turret.Shoot(_target);
+            _turret.Shoot(_target);
             _waitTime = (int)Time.realtimeSinceStartup + _delay;
         }
     }
