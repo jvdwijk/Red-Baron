@@ -22,10 +22,10 @@ public class Attack : State
 
     public override void Action()
     {
-        _enemyMovement.Move(_target);
+        _enemyMovement.Move();
         if (_waitTime <= Time.realtimeSinceStartup)
         {
-            _turret.Shoot(_target);
+            _turret.Shoot(_muzzle);
             _waitTime = (int)Time.realtimeSinceStartup + _delay;
         }
     }

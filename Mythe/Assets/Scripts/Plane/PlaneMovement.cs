@@ -10,7 +10,7 @@ public class PlaneMovement : MonoBehaviour
 
 
 
-    private float _movSpeed = 50.0f;
+    private float _movSpeed = 5.0f;
     private float _rotSpeed = 20.0f;
     private float _barRollSpeed = 100.0f;
 
