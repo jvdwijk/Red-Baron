@@ -5,10 +5,13 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
 
-    private float _speed = 25.0f;
+    private float _speed = 2.0f;
 
-	void Update ()
+
+
+
+	public void Move ()
 	{
-	    transform.position += Vector3.forward * _speed * Time.deltaTime;
+	    transform.position += transform.forward * _speed * Time.deltaTime;
 	}
 }
