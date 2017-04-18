@@ -9,10 +9,10 @@ public class PlaneMovement : MonoBehaviour
 {
 
 
-
-    private float _movSpeed = 50.0f;
+    private float _movSpeed = 5.0f;
     private float _rotSpeed = 20.0f;
     private float _barRollSpeed = 100.0f;
+
 
 
     private Rigidbody _rigidbody;
@@ -25,6 +25,7 @@ public class PlaneMovement : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+
 	    _rigidbody = gameObject.GetComponent<Rigidbody>();
 	}
 	
@@ -36,7 +37,11 @@ public class PlaneMovement : MonoBehaviour
 
 
 
-	    transform.position += transform.forward * _vert * _movSpeed * Time.deltaTime;
+
+	        transform.position += transform.forward * _movSpeed * Time.deltaTime;
+
+
+
 	    if (Input.GetKey(KeyCode.Q))
 	    {
 	        transform.Rotate(Vector3.down * _rotSpeed * Time.deltaTime);
