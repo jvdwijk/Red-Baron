@@ -12,31 +12,48 @@ public class Turret : MonoBehaviour
 	[SerializeField]
 	private float _delay;
 	[SerializeField]
-	private float _value;
-	private bool Shooting = false;
+	private float _bulletCount;
+	private bool _ableToShoot = true;
+	private bool _isShooting = false;
+	private float _maxBulletCount = 50f;
 
 
 	void Start(){
-		_value = 0;
-		ResetCooldown ();
+		_bulletCount = 0;
 	}
 
 	void Update () {
-		_value += Time.deltaTime;
-
-	    if (Input.GetButton("Fire1"))
-	    {
-			this.Shoot (_muzzle);
-	    }
-		if (Shooting == false) {
-			
-				Shooting = false;
-				_value -= Time.deltaTime;
+		if (_bulletCount <= 0) {
+			_bulletCount = 0;
+		}
+		if (_isShooting == false && _bulletCount > 0) {
+			_bulletCount -= Time.deltaTime * 10;
 		}
 
+		if (_bulletCount >= _maxBulletCount) {
+			_ableToShoot = false;
+		}
+		if (_ableToShoot == false) {
+			_bulletCount -= Time.deltaTime * 10;
+			_isShooting = false;
+
+		}
+		if (_bulletCount <= 0) {
+			_ableToShoot = true;
+		}
+		if (_ableToShoot == true) {
+			if (Input.GetButton ("Fire1")) {
+				_isShooting = true;
+				this.Shoot (_muzzle);
+			} else {
+				_isShooting = false;
+			}
+		}
 	}
 
 	public void Shoot(GameObject muzzle){
+		
+		
 		if (_counter < Time.time) {
 
 			_counter = Time.time + _delay;
@@ -52,12 +69,8 @@ public class Turret : MonoBehaviour
 
 			_rigidBody.AddForce (transform.forward * _bulletForce);
 
-			Shooting = true;
+			_bulletCount++;
 		}
 	}
-	void ResetCooldown(){
-		if (_value > 5) {
-			_value = 0;
-		}
-	}
+
 }
