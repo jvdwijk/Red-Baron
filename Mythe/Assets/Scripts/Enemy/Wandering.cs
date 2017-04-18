@@ -11,11 +11,17 @@ public class Wandering : State
     [SerializeField] private int _speed;
     private Vector3 _destination;
 
+    private EnemyMovement _enemyMovement;
+
+    private void Awake()
+    {
+        _enemyMovement = GetComponent<EnemyMovement>();
+    }
+
     public override void Action()
     {
         gameObject.transform.LookAt(_destination);
-        //EnemyMovement.Move(_destination);
-        gameObject.transform.position += Vector3.forward * Time.deltaTime * _speed;
+        _enemyMovement.Move();
     }
 
     public override void Reaction()
@@ -24,7 +30,7 @@ public class Wandering : State
         {
             GetComponent<StateMachine>().SetState( StateId.AttackState );
         }
-        if (Vector3.Distance(transform.position, _destination) <= 2)
+        if (Vector3.Distance(transform.position, _destination) <= 5)
         {
             ChangeDestination();
         }
