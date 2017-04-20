@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR;
 
 public class Wandering : State
 {
@@ -10,6 +11,7 @@ public class Wandering : State
     [SerializeField] private GameObject[] _waypoints;
     [SerializeField] private int _speed;
     private Vector3 _destination;
+    private int _count = 0;
 
     private EnemyMovement _enemyMovement;
 
@@ -20,13 +22,12 @@ public class Wandering : State
 
     public override void Action()
     {
-        gameObject.transform.LookAt(_destination);
-        _enemyMovement.Move();
+        _enemyMovement.Move(_destination);
     }
 
     public override void Reaction()
     {
-        if (Vector3.Distance(transform.position, _target.position) >= _distanceToTarget)
+        if (Vector3.Distance(transform.position, _target.position) <= _distanceToTarget)
         {
             GetComponent<StateMachine>().SetState( StateId.AttackState );
         }
