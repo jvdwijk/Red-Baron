@@ -1,7 +1,19 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Mythe/Assets/Scripts.meta~HEAD_0
 guid: 5b4a6321aa94f4726a38f8cb223b2a90
 folderAsset: yes
 timeCreated: 1491292448
+=======
+<<<<<<< HEAD
+guid: 7a7d51f2829b84fac8dd324d5f2384bb
+folderAsset: yes
+timeCreated: 1491469931
+=======
+guid: 53802b97070a7be4285846945f0596be
+folderAsset: yes
+timeCreated: 1492503439
+>>>>>>> Artist
+>>>>>>> Testing:Mythe/Assets/Art/Materials.meta
 licenseType: Free
 DefaultImporter:
   userData: 
