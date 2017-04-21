@@ -1,15 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using Valve.VR;
+﻿using UnityEngine;
 
 public class Wandering : State
 {
-
     [SerializeField] private Transform _target;
     [SerializeField] private int _distanceToTarget = 20;
     [SerializeField] private GameObject[] _waypoints;
-    [SerializeField] private int _speed;
     private Vector3 _destination;
     private int _count = 0;
 

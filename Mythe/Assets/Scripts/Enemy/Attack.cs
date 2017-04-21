@@ -19,7 +19,6 @@ public class Attack : State
         _enemyMovement.Move(_target.position);
         _turret.Shoot(_muzzle);
     }
-
     public override void Reaction()
     {
         if (Vector3.Distance(transform.position, _target.position) < _distanceToTarget) return;
