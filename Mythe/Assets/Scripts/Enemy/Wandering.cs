@@ -10,6 +10,12 @@ public class Wandering : State
 
     private EnemyMovement _enemyMovement;
 
+    public Wandering(GameObject[] waypoints, Transform target)
+    {
+        _waypoints = waypoints;
+        _target = target;
+    }
+
     private void Awake()
     {
         _enemyMovement = GetComponent<EnemyMovement>();
