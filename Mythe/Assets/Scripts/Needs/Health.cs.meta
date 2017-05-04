@@ -1,21 +1,6 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: e2070daef79f2412596126423dfa1a18
-timeCreated: 1492074998
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-guid: e2070daef79f2412596126423dfa1a18
-timeCreated: 1492065312
-=======
-guid: fc3b871ae836f4d74856191646e5e553
-timeCreated: 1491807673
->>>>>>> origin/Player
-=======
-guid: e2070daef79f2412596126423dfa1a18
-timeCreated: 1492074998
->>>>>>> Testing
->>>>>>> Player
+guid: 0947c6097747d45dead8a82813569468
+timeCreated: 1493889324
 licenseType: Free
 MonoImporter:
   serializedVersion: 2

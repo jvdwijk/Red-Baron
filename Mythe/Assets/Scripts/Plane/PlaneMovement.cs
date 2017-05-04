@@ -7,21 +7,12 @@ using UnityEngine;
 
 public class PlaneMovement : MonoBehaviour
 {
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> Player
     private float _movSpeed = 5.0f;
     private float _rotSpeed = 20.0f;
     private float _barRollSpeed = 100.0f;
 
 
-<<<<<<< HEAD
-=======
 
->>>>>>> Player
     private Rigidbody _rigidbody;
 
     private float _horz;
@@ -32,10 +23,7 @@ public class PlaneMovement : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-<<<<<<< HEAD
-=======
 
->>>>>>> Player
 	    _rigidbody = gameObject.GetComponent<Rigidbody>();
 	}
 	
@@ -47,15 +35,11 @@ public class PlaneMovement : MonoBehaviour
 
 
 
-<<<<<<< HEAD
 	    transform.position += transform.forward * _vert * _movSpeed * Time.deltaTime;
-=======
 
 	        transform.position += transform.forward * _movSpeed * Time.deltaTime;
 
 
-
->>>>>>> Player
 	    if (Input.GetKey(KeyCode.Q))
 	    {
 	        transform.Rotate(Vector3.down * _rotSpeed * Time.deltaTime);
