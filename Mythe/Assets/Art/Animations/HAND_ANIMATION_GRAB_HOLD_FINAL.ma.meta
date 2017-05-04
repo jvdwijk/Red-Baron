@@ -1,0 +1,151 @@
+fileFormatVersion: 2
+guid: 9af1d6297e8052d4f8e222143516e62b
+timeCreated: 1493889540
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Hand_Rig_006:bottom
+    100004: Hand_Rig_006:Cockpit
+    100006: Hand_Rig_006:Cockpit1
+    100008: Hand_Rig_006:Hand_Mesh
+    100010: Hand_Rig_006:Index_01
+    100012: Hand_Rig_006:Index_02
+    100014: Hand_Rig_006:Index_03
+    100016: Hand_Rig_006:Index_04
+    100018: Hand_Rig_006:Main_Frame
+    100020: Hand_Rig_006:Main_Joint
+    100022: Hand_Rig_006:Mid_01
+    100024: Hand_Rig_006:Mid_02
+    100026: Hand_Rig_006:Mid_03
+    100028: Hand_Rig_006:Mid_04
+    100030: Hand_Rig_006:nurbsToPoly1
+    100032: Hand_Rig_006:pCylinder1
+    100034: Hand_Rig_006:Pink_01
+    100036: Hand_Rig_006:Pink_02
+    100038: Hand_Rig_006:Pink_03
+    100040: Hand_Rig_006:Pink_04
+    100042: Hand_Rig_006:polySurface1
+    100044: Hand_Rig_006:Ring_01
+    100046: Hand_Rig_006:Ring_02
+    100048: Hand_Rig_006:Ring_03
+    100050: Hand_Rig_006:Ring_04
+    100052: Hand_Rig_006:Thumb_01
+    100054: Hand_Rig_006:Thumb_02
+    100056: Hand_Rig_006:Thumb_03
+    100058: Hand_Rig_006:Thumb_04
+    100060: Hand_Rig_006:transform1
+    100062: Hand_Rig_006:transform2
+    100064: Hand_Rig_006:transform3
+    100066: Hand_Rig_006:transform4
+    100068: Hand_Rig_006:transform5
+    100070: Hand_Rig_006:transform6
+    400000: //RootNode
+    400002: Hand_Rig_006:bottom
+    400004: Hand_Rig_006:Cockpit
+    400006: Hand_Rig_006:Cockpit1
+    400008: Hand_Rig_006:Hand_Mesh
+    400010: Hand_Rig_006:Index_01
+    400012: Hand_Rig_006:Index_02
+    400014: Hand_Rig_006:Index_03
+    400016: Hand_Rig_006:Index_04
+    400018: Hand_Rig_006:Main_Frame
+    400020: Hand_Rig_006:Main_Joint
+    400022: Hand_Rig_006:Mid_01
+    400024: Hand_Rig_006:Mid_02
+    400026: Hand_Rig_006:Mid_03
+    400028: Hand_Rig_006:Mid_04
+    400030: Hand_Rig_006:nurbsToPoly1
+    400032: Hand_Rig_006:pCylinder1
+    400034: Hand_Rig_006:Pink_01
+    400036: Hand_Rig_006:Pink_02
+    400038: Hand_Rig_006:Pink_03
+    400040: Hand_Rig_006:Pink_04
+    400042: Hand_Rig_006:polySurface1
+    400044: Hand_Rig_006:Ring_01
+    400046: Hand_Rig_006:Ring_02
+    400048: Hand_Rig_006:Ring_03
+    400050: Hand_Rig_006:Ring_04
+    400052: Hand_Rig_006:Thumb_01
+    400054: Hand_Rig_006:Thumb_02
+    400056: Hand_Rig_006:Thumb_03
+    400058: Hand_Rig_006:Thumb_04
+    400060: Hand_Rig_006:transform1
+    400062: Hand_Rig_006:transform2
+    400064: Hand_Rig_006:transform3
+    400066: Hand_Rig_006:transform4
+    400068: Hand_Rig_006:transform5
+    400070: Hand_Rig_006:transform6
+    4300000: Hand_Rig_006:Hand_Mesh
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Hand_Rig_006:Hand_Mesh
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
