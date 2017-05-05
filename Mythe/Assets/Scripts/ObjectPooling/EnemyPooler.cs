@@ -5,7 +5,8 @@ public class EnemyPooler : MonoBehaviour {
 
     private List<GameObject> _usedObjects = new List<GameObject>();
 
-    private void Update()
+    [ContextMenu("PlaceObjects")]
+    private void Go()
     {
         var instant = ObjectPool.Instance.GetObjectForType("Enemy", true);
         if (instant == null)

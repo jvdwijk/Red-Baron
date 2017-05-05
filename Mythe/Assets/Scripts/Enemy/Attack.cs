@@ -2,7 +2,7 @@
 
 public class Attack : State
 {
-    [SerializeField] private Transform _target;
+     private Transform _target;
     [SerializeField] private int _distanceToTarget = 20;
     [SerializeField] private GameObject _muzzle;
     private Turret _turret;
@@ -12,6 +12,7 @@ public class Attack : State
     {
         _turret = GetComponent<Turret>();
         _enemyMovement = GetComponent<EnemyMovement>();
+        _target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     public override void Action()

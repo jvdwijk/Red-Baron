@@ -1,24 +1,24 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Wandering : State
 {
-    [SerializeField] private Transform _target;
+    private Transform _target;
     [SerializeField] private int _distanceToTarget = 20;
-    [SerializeField] private GameObject[] _waypoints;
+    [SerializeField] private Vector2 _startRadius;
+    [SerializeField] private Vector2 _endRadius;
     private Vector3 _destination;
     private int _count = 0;
 
+
     private EnemyMovement _enemyMovement;
 
-    public Wandering(GameObject[] waypoints, Transform target)
-    {
-        _waypoints = waypoints;
-        _target = target;
-    }
 
     private void Awake()
     {
         _enemyMovement = GetComponent<EnemyMovement>();
+        _target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     public override void Action()
@@ -45,6 +45,19 @@ public class Wandering : State
 
     private void ChangeDestination()
     {
-        _destination = _waypoints[Random.Range(0, _waypoints.Length)].transform.position;
+        ChooseWayPoint();
+        var randomPos = ChooseWayPoint();
+        _destination = new Vector3(randomPos.x,100,randomPos.y);
+        //_destination = _waypoints[Random.Range(0, _waypoints.Length)].transform.position;
+    }
+
+    private Vector2 ChooseWayPoint()
+    {
+        var waypoint = new Vector2
+        (
+            Random.Range(_startRadius.x, _endRadius.x),
+            Random.Range(_startRadius.y, _endRadius.y)
+        );
+        return waypoint;
     }
 }
