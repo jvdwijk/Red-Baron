@@ -13,14 +13,13 @@ public class Turret : MonoBehaviour
 	private float _counter;
 	private bool _ableToShoot = true;
 	private bool _isShooting = false;
-	private float _maxBulletCount = 50f;
+	private readonly float _maxBulletCount = 50f;
 
-
-	void Start(){
+	private void Start(){
 		_bulletCount = 0;
 	}
 
-	void Update () {
+	private void Update () {
 		if (_bulletCount <= 0) {
 			_bulletCount = 0;
 		}
@@ -39,35 +38,28 @@ public class Turret : MonoBehaviour
 		if (_bulletCount <= 0) {
 			_ableToShoot = true;
 		}
-		if (_ableToShoot == true) {
-			if (Input.GetButton ("Fire1")) {
-				_isShooting = true;
-				this.Shoot (_muzzle);
-			} else {
-				_isShooting = false;
-			}
+		if (_ableToShoot != true) return;
+		if (Input.GetButton ("Fire1")) {
+			_isShooting = true;
+			this.Shoot ();
+		} else {
+			_isShooting = false;
 		}
 	}
 
-	public void Shoot(GameObject muzzle){
-		
-		
-		if (_counter < Time.time) {
+	public void Shoot(){
+		if (!(_counter < Time.time)) return;
+		_counter = Time.time + _delay;
 
-			_counter = Time.time + _delay;
+		var _bulletHolder = Instantiate (_bullet, _muzzle.transform.position, _muzzle.transform.rotation);
 
-			GameObject _bulletHolder;
-			_bulletHolder = Instantiate (_bullet, _muzzle.transform.position, _muzzle.transform.rotation);
-
-			_bulletHolder.transform.Rotate (Vector3.left * 90);
+		_bulletHolder.transform.Rotate (Vector3.left * 90);
 
 
-			Rigidbody _rigidBody;
-			_rigidBody = _bulletHolder.GetComponent<Rigidbody> ();
+		var _rigidBody = _bulletHolder.GetComponent<Rigidbody> ();
 
-			_rigidBody.AddForce (transform.forward * _bulletForce);
+		_rigidBody.AddForce (transform.forward * _bulletForce);
 
-			_bulletCount++;
-		}
+		_bulletCount++;
 	}
 }

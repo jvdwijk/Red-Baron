@@ -5,12 +5,24 @@ using Random = UnityEngine.Random;
 public class Wandering : State
 {
     private Transform _target;
+    [Header("Distance to player")]
     [SerializeField] private int _distanceToTarget = 20;
+    [Header("Area for selecting waypoint")]
     [SerializeField] private Vector2 _startRadius;
     [SerializeField] private Vector2 _endRadius;
+    public Vector2 SetGetStartRadius
+    {
+        set { _startRadius = value; }
+        get { return _startRadius; }
+    }
+
+    public Vector2 SetGetEndRadius
+    {
+        set { _endRadius = value; }
+        get { return _endRadius; }
+    }
     private Vector3 _destination;
     private int _count = 0;
-
 
     private EnemyMovement _enemyMovement;
 
@@ -48,7 +60,6 @@ public class Wandering : State
         ChooseWayPoint();
         var randomPos = ChooseWayPoint();
         _destination = new Vector3(randomPos.x,100,randomPos.y);
-        //_destination = _waypoints[Random.Range(0, _waypoints.Length)].transform.position;
     }
 
     private Vector2 ChooseWayPoint()

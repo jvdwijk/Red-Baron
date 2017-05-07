@@ -3,8 +3,7 @@
 public class Attack : State
 {
      private Transform _target;
-    [SerializeField] private int _distanceToTarget = 20;
-    [SerializeField] private GameObject _muzzle;
+    [SerializeField] private readonly int _distanceToTarget = 20;
     private Turret _turret;
     private EnemyMovement _enemyMovement;
 
@@ -18,7 +17,7 @@ public class Attack : State
     public override void Action()
     {
         _enemyMovement.Move(_target.position);
-        _turret.Shoot(_muzzle);
+        _turret.Shoot();
     }
     public override void Reaction()
     {

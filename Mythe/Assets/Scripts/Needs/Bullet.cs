@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour {
 
-	void OnTriggerEnter(Collider other){
-		
+	private void Start()
+	{
+		Invoke("Remove",3f);
+	}
+
+	private void Remove()
+	{
+		Destroy(gameObject);
 	}
 }
