@@ -7,9 +7,11 @@ using UnityEngine;
 
 public class PlaneMovement : MonoBehaviour
 {
-    private float _movSpeed = 5.0f;
-    private float _rotSpeed = 20.0f;
-    private float _barRollSpeed = 100.0f;
+	[SerializeField]
+    private float _movSpeed = 200.0f;
+	[SerializeField] private float _rotSpeed = 50.0f;
+	[SerializeField]
+    private float _barRollSpeed = 1000.0f;
 
 
 
@@ -36,15 +38,15 @@ public class PlaneMovement : MonoBehaviour
 
 
 
-	        transform.position += transform.forward * _movSpeed * Time.deltaTime;
+	        transform.position -= transform.forward * _movSpeed * Time.deltaTime;
 
 
 
-	    if (Input.GetKey(KeyCode.Q))
+	    if (Input.GetKey(KeyCode.LeftArrow))
 	    {
 	        transform.Rotate(Vector3.down * _rotSpeed * Time.deltaTime);
 
-	    }else if(Input.GetKey(KeyCode.E))
+	    }else if(Input.GetKey(KeyCode.RightArrow))
 	    {
 	        transform.Rotate(Vector3.up * _rotSpeed * Time.deltaTime);
 	    }
@@ -55,15 +57,15 @@ public class PlaneMovement : MonoBehaviour
 	    //Maar sws altijd een standaard snelheid
 
 
-	    if (Input.GetKey(KeyCode.K))
+	    if (Input.GetKey(KeyCode.DownArrow))
 	    {
 	        transform.Rotate(Vector3.left * _rotSpeed * Time.deltaTime);
 
-	    }else if (Input.GetKey(KeyCode.L))
+	    }else if (Input.GetKey(KeyCode.UpArrow))
 	    {
 	        transform.Rotate(Vector3.right * _rotSpeed * Time.deltaTime);
 	    }
-	    if (Input.GetKey(KeyCode.M))
+	    if (Input.GetKey(KeyCode.Space))
 	    {
 	        transform.Rotate(Vector3.back * _barRollSpeed * Time.deltaTime);
 	    }

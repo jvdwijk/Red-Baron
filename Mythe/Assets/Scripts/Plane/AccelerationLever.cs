@@ -8,6 +8,7 @@ public class AccelerationLever : MonoBehaviour
 {
 
     private Transform _transform;
+	[SerializeField]
     private float _rotationZ;
 
 
@@ -22,21 +23,19 @@ public class AccelerationLever : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-	    _rotationZ = _transform.rotation.z * 10;
+	    //_rotationZ = _transform.rotation.z * 10;
 
 
-
-	    Debug.Log(_rotationZ);
 
 	    if (Input.GetKey(KeyCode.O))
 	    {
-	        _transform.Rotate(Vector3.forward * 20 * Time.deltaTime);
+	        _transform.Rotate(Vector3.forward * _rotationZ * Time.deltaTime);
 	        _onChanged.Invoke(this);
 	    }
 
 	    if (Input.GetKey(KeyCode.P))
 	    {
-	        _transform.Rotate(Vector3.back * 20 * Time.deltaTime);
+	        _transform.Rotate(Vector3.back * _rotationZ * Time.deltaTime);
 	        _onChanged.Invoke(this);
 	    }
 	}

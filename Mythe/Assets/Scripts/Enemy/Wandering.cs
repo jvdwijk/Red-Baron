@@ -21,6 +21,7 @@ public class Wandering : State
         set { _endRadius = value; }
         get { return _endRadius; }
     }
+    [SerializeField]
     private Vector3 _destination;
     private int _count = 0;
 
@@ -44,7 +45,7 @@ public class Wandering : State
         {
             GetComponent<StateMachine>().SetState( StateId.AttackState );
         }
-        if (Vector3.Distance(transform.position, _destination) <= 5)
+        if (Vector3.Distance(transform.position, _destination) <= 20)
         {
             ChangeDestination();
         }
