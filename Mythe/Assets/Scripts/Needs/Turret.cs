@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Turret : MonoBehaviour
 {
@@ -12,8 +10,8 @@ public class Turret : MonoBehaviour
 	[SerializeField] private float _bulletCount;
 	private float _counter;
 	private bool _ableToShoot = true;
-	private bool _isShooting = false;
-	private readonly float _maxBulletCount = 50f;
+	private bool _isShooting;
+	private const float MaxBulletCount = 50f;
 
 	private void Start(){
 		_bulletCount = 0;
@@ -27,7 +25,7 @@ public class Turret : MonoBehaviour
 			_bulletCount -= Time.deltaTime * 10;
 		}
 
-		if (_bulletCount >= _maxBulletCount) {
+		if (_bulletCount >= MaxBulletCount) {
 			_ableToShoot = false;
 		}
 		if (_ableToShoot == false) {
@@ -41,7 +39,7 @@ public class Turret : MonoBehaviour
 		if (_ableToShoot != true) return;
 		if (Input.GetButton ("Fire1")) {
 			_isShooting = true;
-			this.Shoot ();
+			Shoot ();
 		} else {
 			_isShooting = false;
 		}
@@ -51,14 +49,14 @@ public class Turret : MonoBehaviour
 		if (!(_counter < Time.time)) return;
 		_counter = Time.time + _delay;
 
-		var _bulletHolder = Instantiate (_bullet, _muzzle.transform.position, _muzzle.transform.rotation);
+		var bulletHolder = Instantiate (_bullet, _muzzle.transform.position, _muzzle.transform.rotation);
 
-		_bulletHolder.transform.Rotate (Vector3.left * 90);
+		bulletHolder.transform.Rotate (Vector3.left * 90);
 
 
-		var _rigidBody = _bulletHolder.GetComponent<Rigidbody> ();
+		var rigidBody = bulletHolder.GetComponent<Rigidbody> ();
 
-		_rigidBody.AddForce (transform.forward * _bulletForce);
+		rigidBody.AddForce (transform.forward * _bulletForce);
 
 		_bulletCount++;
 	}

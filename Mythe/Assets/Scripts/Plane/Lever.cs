@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.Remoting.Channels;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Lever : MonoBehaviour
 {
@@ -10,10 +7,9 @@ public class Lever : MonoBehaviour
 
     [SerializeField] private float _movSpeed;
 
-	// Use this for initialization
-	void Start ()
+	private void Start ()
 	{
-	    _lever = GameObject.Find("Cube").GetComponent<AccelerationLever>();
+	    _lever = GameObject.Find("Stuur").GetComponent<AccelerationLever>();
 	    _transform = gameObject.GetComponent<Transform>();
 
 	    _lever.RegisterOnChanged(UpdateLeverRotationZ);
@@ -23,9 +19,8 @@ public class Lever : MonoBehaviour
     {
         _movSpeed += lever.RotationZ;
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+	private void Update ()
 	{
 	    _transform.position += Vector3.forward *_movSpeed * Time.deltaTime;
 

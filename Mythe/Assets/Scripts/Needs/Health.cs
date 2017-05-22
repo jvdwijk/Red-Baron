@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Health : MonoBehaviour {
@@ -9,41 +7,41 @@ public class Health : MonoBehaviour {
 	private float _counter;
 	[SerializeField]
 	private float _delay;
-	[SerializeField] private OnDeath onDeath;
+	[SerializeField] private OnDeath _onDeath;
 
-	void Start () {
+	private void Start () {
 		_counter = 0;
 	}
 
-	void OnTriggerEnter(Collider other){
-		if (other.CompareTag ("Bullet")) {
+	private void OnTriggerEnter(Collider other){
+		if (other.CompareTag ("Bullet"))
+		{
 			_health--;
-
 		}
 	}
-	void Update () {
-		if (_health <= 0) {
-			Animate ();
-			if (gameObject.tag == "Enemy") {
-				gameObject.SetActive (false);
-			}
-			if (CompareTag ("Player")) {
-				onDeath.Death ();
 
-			}
-
-		}
-		if (CompareTag ("Player")) {
-			if (_health < 7 && _counter < Time.time)
+	private void Update()
+	{
+		if (_health <= 0)
+		{
+			if (gameObject.CompareTag("Enemy"))
 			{
-				_counter = Time.time + _delay;
-			    _health++;
-
+				gameObject.SetActive(false);
 			}
+			if (CompareTag("Player"))
+			{
+				_onDeath.Death();
 			}
 		}
-	void Animate(){
-		//play death animation
+		if (!CompareTag("Player"))
+		{
+			return;
+		}
+		if (_health >= 7 || _counter >= Time.time)
+		{
+			return;
+		}
+		_counter = Time.time + _delay;
+		_health++;
 	}
-
 }

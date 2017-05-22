@@ -14,30 +14,25 @@ public class AccelerationLever : MonoBehaviour
 
     private Action<AccelerationLever> _onChanged;
 
-	// Use this for initialization
-	void Start ()
+	private void Start ()
 	{
 	    _transform = gameObject.GetComponent<Transform>();
 	}
-	
-	// Update is called once per frame
-	void Update ()
+
+	private void Update ()
 	{
-	    //_rotationZ = _transform.rotation.z * 10;
-
-
-
 	    if (Input.GetKey(KeyCode.O))
 	    {
 	        _transform.Rotate(Vector3.forward * _rotationZ * Time.deltaTime);
 	        _onChanged.Invoke(this);
 	    }
 
-	    if (Input.GetKey(KeyCode.P))
+	    if (!Input.GetKey(KeyCode.P))
 	    {
-	        _transform.Rotate(Vector3.back * _rotationZ * Time.deltaTime);
-	        _onChanged.Invoke(this);
+		    return;
 	    }
+		_transform.Rotate(Vector3.back * _rotationZ * Time.deltaTime);
+		_onChanged.Invoke(this);
 	}
 
     public void RegisterOnChanged(Action<AccelerationLever> cb)

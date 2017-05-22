@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class OnDeath : MonoBehaviour {
@@ -9,5 +7,4 @@ public class OnDeath : MonoBehaviour {
 	public void Death(){
 		SceneManager.LoadScene (0);
 	}
-
 }

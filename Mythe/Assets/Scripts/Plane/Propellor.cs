@@ -1,10 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Propellor : MonoBehaviour
 {
-
 	[SerializeField] private int _rotateSpeed = 5;
 
 	private void Update () {

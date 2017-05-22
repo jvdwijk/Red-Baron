@@ -3,7 +3,7 @@
 public class Attack : State
 {
      private Transform _target;
-    [SerializeField] private readonly int _distanceToTarget = 20;
+    [SerializeField] private int _distanceToTarget = 20;
     private Turret _turret;
     private EnemyMovement _enemyMovement;
 
