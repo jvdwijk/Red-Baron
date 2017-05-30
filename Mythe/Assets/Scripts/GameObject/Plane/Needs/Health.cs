@@ -6,14 +6,14 @@ public class Health : MonoBehaviour {
 	private int _health = 10;
 	private float _counter;
 	[SerializeField]
-	private float _delay;
+	private float _delay = 0.1f;
 	[SerializeField] private OnDeath _onDeath;
 
 	private void Start () {
 		_counter = 0;
 	}
 
-	private void OnTriggerEnter(Collider other){
+	private void OnTriggerEnter(Component other){
 		if (other.CompareTag ("Bullet"))
 		{
 			_health--;

@@ -1,12 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-using Valve.VR;
 
 public class OnDeath : MonoBehaviour {
 
-
 	[ContextMenu("Death")]
 	public void Death(){
+		Debug.Log("Dead");
 		//SceneManager.LoadScene (0);
 	}
 }
