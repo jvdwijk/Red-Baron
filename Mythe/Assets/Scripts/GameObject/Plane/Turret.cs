@@ -37,7 +37,7 @@ public class Turret : MonoBehaviour
 			_ableToShoot = true;
 		}
 		if (_ableToShoot != true) return;
-		if (Input.GetButton ("Fire1")) {
+		if (Input.GetAxis("Fire1") > 0 || Input.GetAxis("Fire2") > 0) {
 			_isShooting = true;
 			Shoot ();
 		} else {

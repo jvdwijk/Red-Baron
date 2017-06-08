@@ -20,7 +20,7 @@ public class AccelerationLever : MonoBehaviour
 	private void Update ()
 	{
 		_transform.Rotate(new Vector3(0,0,Input.GetAxis("Horizontal")) * _rotationZ * Time.deltaTime);
-		_onChanged.Invoke(this);
+		//_onChanged.Invoke(this);
 	}
 
     public void RegisterOnChanged(Action<AccelerationLever> cb)
