@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 using System;
 
@@ -21,17 +19,7 @@ public class AccelerationLever : MonoBehaviour
 
 	private void Update ()
 	{
-	    if (Input.GetKey(KeyCode.O))
-	    {
-	        _transform.Rotate(Vector3.forward * _rotationZ * Time.deltaTime);
-	        _onChanged.Invoke(this);
-	    }
-
-	    if (!Input.GetKey(KeyCode.P))
-	    {
-		    return;
-	    }
-		_transform.Rotate(Vector3.back * _rotationZ * Time.deltaTime);
+		_transform.Rotate(new Vector3(0,0,Input.GetAxis("Horizontal")) * _rotationZ * Time.deltaTime);
 		_onChanged.Invoke(this);
 	}
 

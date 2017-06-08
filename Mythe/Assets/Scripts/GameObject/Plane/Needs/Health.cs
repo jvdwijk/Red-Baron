@@ -26,7 +26,7 @@ public class Health : MonoBehaviour {
 		{
 			if (gameObject.CompareTag("Enemy"))
 			{
-				gameObject.SetActive(false);
+				ObjectPool.Instance.PoolObject(gameObject);
 			}
 			if (CompareTag("Player"))
 			{
