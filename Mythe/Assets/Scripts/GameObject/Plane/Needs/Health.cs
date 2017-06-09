@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using System.Collections;
+using Valve.VR;
 
 public class Health : MonoBehaviour
 {
@@ -12,10 +13,23 @@ public class Health : MonoBehaviour
 	[SerializeField]
 	private float _delay = 0.1f;
 	[SerializeField] private OnDeath _onDeath;
-	[SerializeField] private WaveSystem _waveSystem;
+	private WaveSystem _waveSystem;
+
+	public int GetSetHealth
+	{
+		get{
+			return _health;
+		}
+
+		set
+		{
+			_health = value;
+		}
+}
 
 	private void Start ()
 	{
+		_waveSystem = GameObject.FindGameObjectWithTag("Pooler").GetComponent<WaveSystem>();
 		EnemyDeath = _waveSystem.DeathCount;
 		_counter = 0;
 	}
@@ -27,6 +41,12 @@ public class Health : MonoBehaviour
 		}
 	}
 
+	private void OnEnabled()
+	{
+		if (!CompareTag("Enemy")) return;
+		_health = 10;
+	}
+	
 	private void Update()
 	{
 		if (_health <= 0)

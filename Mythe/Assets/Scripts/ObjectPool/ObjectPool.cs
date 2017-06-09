@@ -39,7 +39,7 @@ public class ObjectPool : MonoBehaviour {
         Instance = this;
     }
 
-    private void Start()
+    private void Awake()
     {
         _containerObject = gameObject;
         _pool = new List<GameObject>[_entries.Length];
