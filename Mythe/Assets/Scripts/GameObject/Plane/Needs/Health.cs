@@ -37,7 +37,15 @@ public class Health : MonoBehaviour
 	private void OnTriggerEnter(Component other){
 		if (other.CompareTag ("Bullet"))
 		{
-			_health--;
+			if (!CompareTag("Player"))
+			{
+				_health -= 10;
+			}
+		}
+		if (!other.CompareTag("Bullet2")) return;
+		if (CompareTag("Player"))
+		{
+			_health -= 10;
 		}
 	}
 
